@@ -11,6 +11,7 @@ window.addEventListener("load", function() {
 document.querySelector("#play").addEventListener("click", function() {
 	console.log("Play Video");
 	video.play()
+	document.getElementById("volume").innerText = Math.round(video.volume * 100) + "%";
 });
 
 document.querySelector("#pause").addEventListener("click", function() {
@@ -51,6 +52,7 @@ document.getElementById("mute").addEventListener("click", function() {
 document.getElementById("slider").addEventListener("input", function() {
 	video.volume = this.value / 100;
 	console.log("The current volume is " + video.volume);
+	document.getElementById("volume").innerText = Math.round(video.volume * 100) + "%";
 });
 
 document.getElementById("vintage").addEventListener("click", function() {
